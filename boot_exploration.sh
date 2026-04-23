@@ -26,3 +26,14 @@ chmod u+rw,go-rwx privado
 #Assign full read and write permissions to the owner (user) and remove any access (read, write and execute) for the group and the rest of the world on the "private" file.
 echo "hola" | sudo tee /etc/archivo_protegido>/dev/null
 #Write the text "hello" to a file that requires administrator permissions, using tee to elevate privileges and >/dev/null to hide the output in the terminal.
+
+sudo sh -c 'echo "chao" >> /etc/archivo_protegido'
+#Run a terminal with root privileges to add the word "chao" to the end of a protected file on the system.
+sudo -i
+#This command opens an interactive shell session with root (superuser) privileges, allowing you to run multiple administrative commands without having to type sudo before each one.
+echo "$HOME$"
+#That command will print the path to your home directory followed by a literal dollar sign.
+echo '$HOME$'
+#The result will be exactly $HOME$, literally.
+sudo su
+#This command is used to change the current user to root (the superuser), but in a slightly different way than sudo -i.
