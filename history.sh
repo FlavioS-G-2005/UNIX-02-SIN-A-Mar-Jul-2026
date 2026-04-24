@@ -17,4 +17,10 @@
    23  git commit -m "Fix problem 2: files moved and renamed"
    24  history
    Problema 3
+   25  chmod 640 evaluation/kepler/registros/sensores.log
+   26  ls -l evaluation/kepler/registros/sensores.log
+   27  git add .
+   28  git commit -m "Fix problem 3: numeric permissions 640 on sensorials.log"
+   29  history
+   Problema 4
    
