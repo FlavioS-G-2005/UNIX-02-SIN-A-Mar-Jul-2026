@@ -31,4 +31,10 @@
    35  git commit -m "Fix problem 4: symbolic permissions corrected"
    36  history
    Problema 5
+    37  chmod u+s evaluation/kepler/runner.sh
+   38  ls -l evaluation/kepler/runner.sh
+   39  git add .
+   40  git commit -m "Fix issue 5: SUID enabled in runner.sh"
+   41  history
+   Problema 6
    
