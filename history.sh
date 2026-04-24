@@ -9,4 +9,12 @@
    16  git commit -m "Fix problema 1: estructura de directorios corregida"
    17  history
    Problema 2
+   18  mv evaluation/kepler/sensores.log evaluation/kepler/registros/
+   19  mv evaluation/kepler/ajustes.old evaluation/kepler/ajustes.conf
+   20  git add .
+   21  ls -R evaluation/kepler
+   22  git add .
+   23  git commit -m "Fix problem 2: files moved and renamed"
+   24  history
+   Problema 3
    
