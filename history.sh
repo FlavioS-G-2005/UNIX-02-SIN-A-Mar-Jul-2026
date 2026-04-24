@@ -23,4 +23,12 @@
    28  git commit -m "Fix problem 3: numeric permissions 640 on sensorials.log"
    29  history
    Problema 4
+   30  chmod u+x evaluation/kepler/runner.sh
+   31  chmod o-w evaluation/kepler/ajustes.conf
+   32  ls -l evaluation/kepler/runner.sh
+   33  ls -l evaluation/kepler/ajustes.conf
+   34  git add .
+   35  git commit -m "Fix problem 4: symbolic permissions corrected"
+   36  history
+   Problema 5
    
