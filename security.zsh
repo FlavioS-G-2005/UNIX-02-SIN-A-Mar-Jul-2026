@@ -145,3 +145,75 @@ mkdir /homej/proyecto_unix
 ls -la /home/j/proyecto_unix
 #
 
+# Create a new directory named 'proyecto_unix' inside the user's home directory
+mkdir ~/proyecto_unix/
+
+# List all contents of the new directory in long format (-l), including hidden files (-a)
+ls -la ~/proyecto_unix/
+
+# groupadd [options] group_name
+# Create a simple group
+sudo groupadd developers
+sudo groupadd -g 2000 operations
+# System group (GID < 1000)
+sudo groupadd --system web_services
+# Specific GID
+
+# Verify that they were created (using basic grep, requires escaping the pipe \|)
+grep "developers\|operations\|web_services" /etc/group
+
+# Verify using -E (Extended regular expressions, cleaner syntax)
+grep -E "developers|operations|web_services" /etc/group
+
+# View main options
+groupadd --help
+grep "GID_MIN\|GID_MAX\|SYS_GID" /etc/login.defs
+# Search for the minimum, maximum, and system Group ID configurations
+# The '\|' symbol acts as an "OR" to search for multiple specific terms at once
+grep "GID_MIN\|GID_MAX\|SYS_GID" /etc/login.defs
+
+# GID_MIN 1000
+# The lowest Group ID (GID) automatically assigned when creating a standard user group.
+
+# GID_MAX 60000
+# The highest Group ID (GID) automatically assigned when creating a standard user group.
+
+# SYS_GID_MIN 101
+# The lowest Group ID reserved for system groups (typically used for services, apps, and background processes).
+
+# SYS_GID_MAX 999
+# The highest Group ID reserved for system groups.
+
+# SUB_GID_MIN 100000
+# The starting ID for subordinate groups (mostly used for Docker/Podman containers and user namespaces to map permissions).
+
+# SUB_GID_MAX 600100000
+# The ending ID for subordinate groups.
+
+# addgroup [options] group_name
+# Create groups with addgroup
+sudo addgroup design
+sudo addgroup --gid 2100 marketing
+sudo addgroup --system web_cache
+
+# Verify (Note: I fixed the syntax and typos so this command works correctly)
+grep "design\|marketing\|web_cache" /etc/group
+
+# Alternatively, using -E for cleaner syntax:
+# grep -E "design|marketing|web_cache" /etc/group
+# Create a temporary group for the demo
+sudo groupadd temporary_group
+
+# Add the root user to the temporary group
+sudo usermod -aG temporary_group root
+
+# Verify the root user's identity and groups
+id root # has temporary_group
+# Verify the root user's identity and groups
+id root # has temporary_group
+
+# Now the MISTAKE: usermod without -a
+usermod -G developers root
+
+# This REMOVES all secondary groups except developers
+id root # lost all other groups
