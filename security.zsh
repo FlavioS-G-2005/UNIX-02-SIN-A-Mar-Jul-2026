@@ -123,3 +123,25 @@ cat /etc/passwd | head -10
 
 cat /etc/passwd 
 # Dumps the entire list of registered accounts, showing both human users and background system services.
+
+groups 
+# Lists out the names of all the groups the current user is a member of, plain and simple.
+
+id -u
+# Strips away the extra details to print strictly your numeric User ID (UID) — perfect for scripting.
+
+id -g
+# Extracts only the numeric ID of your primary group (GID).
+
+id -G
+# Spits out a raw, space-separated list of all the numeric Group IDs (GIDs) you belong to.
+
+cat /etc/group | grep codespace
+# Searches the system's master group file specifically for any entries containing the word 'codespace', filtering out all the other noise.
+
+mkdir /homej/proyecto_unix
+#
+
+ls -la /home/j/proyecto_unix
+#
+
