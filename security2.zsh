@@ -32,4 +32,16 @@ ls -la ~/dentro_de_desarrolladores.txt
 mkdir -p ~/proyecto_dev/src
 ls -la ~/
 proyecto_dev/ tiene grupo 'desarrolladores'
-#
+su luna
+Switches the current terminal session to the user account named "luna".
+
+exit
+Closes the current shell session or logs out of the active user account, returning to the previous user.
+groupadd grupo_restringido
+Creates a new system group named "grupo_restringido".
+usermod -aG grupo_restringido luna
+Appends the user "luna" to the secondary group "grupo_restringido" without removing them from their existing groups.
+useradd luna
+Attempts to create a new user account named "luna" without generating a default home directory.
+useradd -m luna
+Attempts to create a new user named "luna" and automatically generate their home directory (which fails here because the user already exists).
