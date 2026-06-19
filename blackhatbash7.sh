@@ -19,3 +19,8 @@ awk '{print $3}' log.txt
 
 awk '{print $1,$NF}' log.txt
 
+sed 's/Mozilla/Godzilla/g' log.txt
+grep "zilla" log.txt
+sed 's/Mozilla/Godzilla/g' log.txt > newlog.txt
+grep "zilla" log.txt
+
